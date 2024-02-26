@@ -1,0 +1,560 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		391E88952A8377A1004A8496 /* CoconutCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 391E88942A8377A1004A8496 /* CoconutCollectionViewCell.swift */; };
+		391E88972A839424004A8496 /* ScaleCoconutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 391E88962A839424004A8496 /* ScaleCoconutViewController.swift */; };
+		95059B272A73624600F24724 /* CalcuteInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95059B262A73624600F24724 /* CalcuteInfoViewController.swift */; };
+		95059B292A73A54000F24724 /* CalcuelateResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95059B282A73A54000F24724 /* CalcuelateResultViewController.swift */; };
+		95059B2B2A74A00E00F24724 /* SearchDeviceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95059B2A2A74A00E00F24724 /* SearchDeviceViewController.swift */; };
+		95059B302A74B96900F24724 /* ItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95059B2F2A74B96900F24724 /* ItemCollectionViewCell.swift */; };
+		9508355A2A8483AF00338C14 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950835592A8483AF00338C14 /* BaseViewController.swift */; };
+		952319672A5408CD003246BA /* UserInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952319662A5408CD003246BA /* UserInfoViewController.swift */; };
+		955A39C62A2B3A0D00853B9D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955A39C52A2B3A0D00853B9D /* AppDelegate.swift */; };
+		955A39CA2A2B3A0D00853B9D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955A39C92A2B3A0D00853B9D /* ViewController.swift */; };
+		955A39CD2A2B3A0D00853B9D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 955A39CB2A2B3A0D00853B9D /* Main.storyboard */; };
+		955A39CF2A2B3A0E00853B9D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 955A39CE2A2B3A0E00853B9D /* Assets.xcassets */; };
+		955A39D22A2B3A0E00853B9D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 955A39D02A2B3A0E00853B9D /* LaunchScreen.storyboard */; };
+		96D8C1A72B1A06BF008E9AB3 /* DeviceAnkerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D8C1A62B1A06BF008E9AB3 /* DeviceAnkerViewController.swift */; };
+		96D8C1AA2B1A1036008E9AB3 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D8C1A92B1A1036008E9AB3 /* Extensions.swift */; };
+		D8EF3D817407F48A90875741 /* Pods_AnkerBluetoothKitDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C1C26F7D400F24FD3F3B266 /* Pods_AnkerBluetoothKitDemo.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		1B6C81D2D3F4BCD743879964 /* Pods-PPBluetoothKitDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PPBluetoothKitDemo.release.xcconfig"; path = "Target Support Files/Pods-PPBluetoothKitDemo/Pods-PPBluetoothKitDemo.release.xcconfig"; sourceTree = "<group>"; };
+		2C1C26F7D400F24FD3F3B266 /* Pods_AnkerBluetoothKitDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AnkerBluetoothKitDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		391E88942A8377A1004A8496 /* CoconutCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoconutCollectionViewCell.swift; sourceTree = "<group>"; };
+		391E88962A839424004A8496 /* ScaleCoconutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScaleCoconutViewController.swift; sourceTree = "<group>"; };
+		95059B262A73624600F24724 /* CalcuteInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalcuteInfoViewController.swift; sourceTree = "<group>"; };
+		95059B282A73A54000F24724 /* CalcuelateResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalcuelateResultViewController.swift; sourceTree = "<group>"; };
+		95059B2A2A74A00E00F24724 /* SearchDeviceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchDeviceViewController.swift; sourceTree = "<group>"; };
+		95059B2F2A74B96900F24724 /* ItemCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCollectionViewCell.swift; sourceTree = "<group>"; };
+		950835592A8483AF00338C14 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		952319662A5408CD003246BA /* UserInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoViewController.swift; sourceTree = "<group>"; };
+		9557F6502A4962AB00F6AE60 /* SwiftHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwiftHeader.h; sourceTree = "<group>"; };
+		955A39C22A2B3A0D00853B9D /* AnkerBluetoothKitDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AnkerBluetoothKitDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		955A39C52A2B3A0D00853B9D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		955A39C92A2B3A0D00853B9D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		955A39CC2A2B3A0D00853B9D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		955A39CE2A2B3A0E00853B9D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		955A39D12A2B3A0E00853B9D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		955A39D32A2B3A0E00853B9D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		96D8C1A62B1A06BF008E9AB3 /* DeviceAnkerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceAnkerViewController.swift; sourceTree = "<group>"; };
+		96D8C1A92B1A1036008E9AB3 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		AE6FAE380A5ECF1A96E0FC73 /* Pods-AnkerBluetoothKitDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AnkerBluetoothKitDemo.release.xcconfig"; path = "Target Support Files/Pods-AnkerBluetoothKitDemo/Pods-AnkerBluetoothKitDemo.release.xcconfig"; sourceTree = "<group>"; };
+		CDC3786054ABEC68294777A1 /* Pods-AnkerBluetoothKitDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AnkerBluetoothKitDemo.debug.xcconfig"; path = "Target Support Files/Pods-AnkerBluetoothKitDemo/Pods-AnkerBluetoothKitDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		FFAD8C40FCCE4BC474A517D5 /* Pods-PPBluetoothKitDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PPBluetoothKitDemo.debug.xcconfig"; path = "Target Support Files/Pods-PPBluetoothKitDemo/Pods-PPBluetoothKitDemo.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		955A39BF2A2B3A0D00853B9D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D8EF3D817407F48A90875741 /* Pods_AnkerBluetoothKitDemo.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		15D016E26305B9DD0C3DA692 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2C1C26F7D400F24FD3F3B266 /* Pods_AnkerBluetoothKitDemo.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		95059B202A73600300F24724 /* calcute */ = {
+			isa = PBXGroup;
+			children = (
+				96D8C1A82B1A1029008E9AB3 /* Tools */,
+				9508355B2A848D5800338C14 /* Scale */,
+				950835562A84814800338C14 /* DeviceView */,
+				95059B2E2A74B95300F24724 /* Views */,
+				95059B262A73624600F24724 /* CalcuteInfoViewController.swift */,
+				95059B282A73A54000F24724 /* CalcuelateResultViewController.swift */,
+				95059B2A2A74A00E00F24724 /* SearchDeviceViewController.swift */,
+			);
+			path = calcute;
+			sourceTree = "<group>";
+		};
+		95059B2E2A74B95300F24724 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				95059B2F2A74B96900F24724 /* ItemCollectionViewCell.swift */,
+				391E88942A8377A1004A8496 /* CoconutCollectionViewCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		950835562A84814800338C14 /* DeviceView */ = {
+			isa = PBXGroup;
+			children = (
+				950835592A8483AF00338C14 /* BaseViewController.swift */,
+				96D8C1A62B1A06BF008E9AB3 /* DeviceAnkerViewController.swift */,
+			);
+			path = DeviceView;
+			sourceTree = "<group>";
+		};
+		9508355B2A848D5800338C14 /* Scale */ = {
+			isa = PBXGroup;
+			children = (
+				391E88962A839424004A8496 /* ScaleCoconutViewController.swift */,
+			);
+			path = Scale;
+			sourceTree = "<group>";
+		};
+		955A39B92A2B3A0D00853B9D = {
+			isa = PBXGroup;
+			children = (
+				955A39C42A2B3A0D00853B9D /* AnkerBluetoothKitDemo */,
+				955A39C32A2B3A0D00853B9D /* Products */,
+				A9D95944B6F6EF113B76B147 /* Pods */,
+				15D016E26305B9DD0C3DA692 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		955A39C32A2B3A0D00853B9D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				955A39C22A2B3A0D00853B9D /* AnkerBluetoothKitDemo.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		955A39C42A2B3A0D00853B9D /* AnkerBluetoothKitDemo */ = {
+			isa = PBXGroup;
+			children = (
+				95059B202A73600300F24724 /* calcute */,
+				955A39C52A2B3A0D00853B9D /* AppDelegate.swift */,
+				955A39C92A2B3A0D00853B9D /* ViewController.swift */,
+				955A39CB2A2B3A0D00853B9D /* Main.storyboard */,
+				955A39CE2A2B3A0E00853B9D /* Assets.xcassets */,
+				955A39D02A2B3A0E00853B9D /* LaunchScreen.storyboard */,
+				955A39D32A2B3A0E00853B9D /* Info.plist */,
+				9557F6502A4962AB00F6AE60 /* SwiftHeader.h */,
+				952319662A5408CD003246BA /* UserInfoViewController.swift */,
+			);
+			path = AnkerBluetoothKitDemo;
+			sourceTree = "<group>";
+		};
+		96D8C1A82B1A1029008E9AB3 /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				96D8C1A92B1A1036008E9AB3 /* Extensions.swift */,
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
+		A9D95944B6F6EF113B76B147 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				FFAD8C40FCCE4BC474A517D5 /* Pods-PPBluetoothKitDemo.debug.xcconfig */,
+				1B6C81D2D3F4BCD743879964 /* Pods-PPBluetoothKitDemo.release.xcconfig */,
+				CDC3786054ABEC68294777A1 /* Pods-AnkerBluetoothKitDemo.debug.xcconfig */,
+				AE6FAE380A5ECF1A96E0FC73 /* Pods-AnkerBluetoothKitDemo.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		955A39C12A2B3A0D00853B9D /* AnkerBluetoothKitDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 955A39EC2A2B3A0E00853B9D /* Build configuration list for PBXNativeTarget "AnkerBluetoothKitDemo" */;
+			buildPhases = (
+				1F9550B24994B6C3CF919FBA /* [CP] Check Pods Manifest.lock */,
+				955A39BE2A2B3A0D00853B9D /* Sources */,
+				955A39BF2A2B3A0D00853B9D /* Frameworks */,
+				955A39C02A2B3A0D00853B9D /* Resources */,
+				9BC014EA59E6431333D9D3D9 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AnkerBluetoothKitDemo;
+			productName = PPBluetoothKitDemo;
+			productReference = 955A39C22A2B3A0D00853B9D /* AnkerBluetoothKitDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		955A39BA2A2B3A0D00853B9D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1430;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					955A39C12A2B3A0D00853B9D = {
+						CreatedOnToolsVersion = 14.3;
+					};
+				};
+			};
+			buildConfigurationList = 955A39BD2A2B3A0D00853B9D /* Build configuration list for PBXProject "AnkerBluetoothKitDemo" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 955A39B92A2B3A0D00853B9D;
+			productRefGroup = 955A39C32A2B3A0D00853B9D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				955A39C12A2B3A0D00853B9D /* AnkerBluetoothKitDemo */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		955A39C02A2B3A0D00853B9D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				955A39D22A2B3A0E00853B9D /* LaunchScreen.storyboard in Resources */,
+				955A39CF2A2B3A0E00853B9D /* Assets.xcassets in Resources */,
+				955A39CD2A2B3A0D00853B9D /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1F9550B24994B6C3CF919FBA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-AnkerBluetoothKitDemo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9BC014EA59E6431333D9D3D9 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AnkerBluetoothKitDemo/Pods-AnkerBluetoothKitDemo-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AnkerBluetoothKitDemo/Pods-AnkerBluetoothKitDemo-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AnkerBluetoothKitDemo/Pods-AnkerBluetoothKitDemo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		955A39BE2A2B3A0D00853B9D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				95059B2B2A74A00E00F24724 /* SearchDeviceViewController.swift in Sources */,
+				391E88952A8377A1004A8496 /* CoconutCollectionViewCell.swift in Sources */,
+				955A39CA2A2B3A0D00853B9D /* ViewController.swift in Sources */,
+				955A39C62A2B3A0D00853B9D /* AppDelegate.swift in Sources */,
+				95059B292A73A54000F24724 /* CalcuelateResultViewController.swift in Sources */,
+				391E88972A839424004A8496 /* ScaleCoconutViewController.swift in Sources */,
+				96D8C1A72B1A06BF008E9AB3 /* DeviceAnkerViewController.swift in Sources */,
+				95059B272A73624600F24724 /* CalcuteInfoViewController.swift in Sources */,
+				9508355A2A8483AF00338C14 /* BaseViewController.swift in Sources */,
+				96D8C1AA2B1A1036008E9AB3 /* Extensions.swift in Sources */,
+				952319672A5408CD003246BA /* UserInfoViewController.swift in Sources */,
+				95059B302A74B96900F24724 /* ItemCollectionViewCell.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		955A39CB2A2B3A0D00853B9D /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				955A39CC2A2B3A0D00853B9D /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		955A39D02A2B3A0E00853B9D /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				955A39D12A2B3A0E00853B9D /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		955A39EA2A2B3A0E00853B9D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		955A39EB2A2B3A0E00853B9D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		955A39ED2A2B3A0E00853B9D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CDC3786054ABEC68294777A1 /* Pods-AnkerBluetoothKitDemo.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = W4G83GSZJ8;
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"COCOAPODS=1",
+					"DEMO=1",
+				);
+				GENERATE_INFOPLIST_FILE = YES;
+				HEADER_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = AnkerBluetoothKitDemo/Info.plist;
+				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "需要您的同意,使用蓝牙连接设备";
+				INFOPLIST_KEY_NSBluetoothPeripheralUsageDescription = "需要您的同意,使用蓝牙连接设备";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				MARKETING_VERSION = 1.1;
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-framework",
+					"\"CoreGraphics\"",
+					"-framework",
+					"\"Foundation\"",
+					"-framework",
+					"\"QuartzCore\"",
+					"-framework",
+					"\"UIKit\"",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = xm.AnkerBluetoothKitDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = AnkerBluetoothKitDemo/SwiftHeader.h;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		955A39EE2A2B3A0E00853B9D /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AE6FAE380A5ECF1A96E0FC73 /* Pods-AnkerBluetoothKitDemo.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = W4G83GSZJ8;
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				GENERATE_INFOPLIST_FILE = YES;
+				HEADER_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = AnkerBluetoothKitDemo/Info.plist;
+				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "需要您的同意,使用蓝牙连接设备";
+				INFOPLIST_KEY_NSBluetoothPeripheralUsageDescription = "需要您的同意,使用蓝牙连接设备";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				MARKETING_VERSION = 1.1;
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-framework",
+					"\"CoreGraphics\"",
+					"-framework",
+					"\"Foundation\"",
+					"-framework",
+					"\"QuartzCore\"",
+					"-framework",
+					"\"UIKit\"",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = xm.AnkerBluetoothKitDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = AnkerBluetoothKitDemo/SwiftHeader.h;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		955A39BD2A2B3A0D00853B9D /* Build configuration list for PBXProject "AnkerBluetoothKitDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				955A39EA2A2B3A0E00853B9D /* Debug */,
+				955A39EB2A2B3A0E00853B9D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		955A39EC2A2B3A0E00853B9D /* Build configuration list for PBXNativeTarget "AnkerBluetoothKitDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				955A39ED2A2B3A0E00853B9D /* Debug */,
+				955A39EE2A2B3A0E00853B9D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 955A39BA2A2B3A0D00853B9D /* Project object */;
+}

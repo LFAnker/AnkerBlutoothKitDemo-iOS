@@ -1,0 +1,6 @@
+framework module AnkerBluetoothKit {
+  umbrella header "AnkerBluetoothKit.h"
+  export *
+
+  module * { export * }
+}
