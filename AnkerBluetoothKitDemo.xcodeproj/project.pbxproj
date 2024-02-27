@@ -20,6 +20,7 @@
 		955A39CD2A2B3A0D00853B9D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 955A39CB2A2B3A0D00853B9D /* Main.storyboard */; };
 		955A39CF2A2B3A0E00853B9D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 955A39CE2A2B3A0E00853B9D /* Assets.xcassets */; };
 		955A39D22A2B3A0E00853B9D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 955A39D02A2B3A0E00853B9D /* LaunchScreen.storyboard */; };
+		96808BDB2B8D8468000DF1D5 /* WifiConfigViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96808BDA2B8D8468000DF1D5 /* WifiConfigViewController.swift */; };
 		96D8C1A72B1A06BF008E9AB3 /* DeviceAnkerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D8C1A62B1A06BF008E9AB3 /* DeviceAnkerViewController.swift */; };
 		96D8C1AA2B1A1036008E9AB3 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D8C1A92B1A1036008E9AB3 /* Extensions.swift */; };
 		D8EF3D817407F48A90875741 /* Pods_AnkerBluetoothKitDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C1C26F7D400F24FD3F3B266 /* Pods_AnkerBluetoothKitDemo.framework */; };
@@ -44,6 +45,7 @@
 		955A39CE2A2B3A0E00853B9D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		955A39D12A2B3A0E00853B9D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		955A39D32A2B3A0E00853B9D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		96808BDA2B8D8468000DF1D5 /* WifiConfigViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WifiConfigViewController.swift; sourceTree = "<group>"; };
 		96D8C1A62B1A06BF008E9AB3 /* DeviceAnkerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceAnkerViewController.swift; sourceTree = "<group>"; };
 		96D8C1A92B1A1036008E9AB3 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		AE6FAE380A5ECF1A96E0FC73 /* Pods-AnkerBluetoothKitDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AnkerBluetoothKitDemo.release.xcconfig"; path = "Target Support Files/Pods-AnkerBluetoothKitDemo/Pods-AnkerBluetoothKitDemo.release.xcconfig"; sourceTree = "<group>"; };
@@ -81,6 +83,7 @@
 				95059B262A73624600F24724 /* CalcuteInfoViewController.swift */,
 				95059B282A73A54000F24724 /* CalcuelateResultViewController.swift */,
 				95059B2A2A74A00E00F24724 /* SearchDeviceViewController.swift */,
+				96808BDA2B8D8468000DF1D5 /* WifiConfigViewController.swift */,
 			);
 			path = calcute;
 			sourceTree = "<group>";
@@ -281,6 +284,7 @@
 			files = (
 				95059B2B2A74A00E00F24724 /* SearchDeviceViewController.swift in Sources */,
 				391E88952A8377A1004A8496 /* CoconutCollectionViewCell.swift in Sources */,
+				96808BDB2B8D8468000DF1D5 /* WifiConfigViewController.swift in Sources */,
 				955A39CA2A2B3A0D00853B9D /* ViewController.swift in Sources */,
 				955A39C62A2B3A0D00853B9D /* AppDelegate.swift in Sources */,
 				95059B292A73A54000F24724 /* CalcuelateResultViewController.swift in Sources */,

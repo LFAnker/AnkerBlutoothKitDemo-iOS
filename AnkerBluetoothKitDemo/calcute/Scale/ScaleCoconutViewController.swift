@@ -46,6 +46,26 @@ class ScaleCoconutViewController:UIViewController{
         
 
     }
+    
+    func displayScaleModel(_ scaleModel:AKBluetoothScaleBaseModel) {
+        
+        let calculateWeightKg = Float(scaleModel.weight)/100
+        
+        var weightStr = calculateWeightKg.toCurrentUserString(accuracyType: Int(2), unitType: Int(scaleModel.unit.rawValue),forWeight: true) + " \(Int(scaleModel.unit.rawValue).getUnitStr())"
+        
+        weightStr = (self.complete ?? false) ? "weight lock:" + weightStr : "weight process:" + weightStr
+        
+        if (scaleModel.isHeartRating) {
+            
+            weightStr = weightStr + "\nMeasuring heart rate..."
+        } else if (scaleModel.isFatting) {
+            
+            weightStr = weightStr + "\nMeasuring body fat..."
+        }
+        
+        self.weightLabe.text = weightStr
+
+    }
 
     var XM_AKBluetoothScaleBaseModel :AKBluetoothScaleBaseModel? {
         
@@ -57,14 +77,9 @@ class ScaleCoconutViewController:UIViewController{
                 return
             }
             DispatchQueue.main.async {
-                self.weightLabe.text = String.init(format: "weight lock:%0.2f", Float(model.weight) / 100.0)
                 
-                if model.heartRate > 0{
-                    
-                    self.weightLabe.text = String.init(format: "weight lock:%0.2f    heartRate:%ld", Float(model.weight) / 100.0,model.heartRate)
+                self.displayScaleModel(model)
 
-                }
-                
                 if let com = self.complete{
                  
                     if com{

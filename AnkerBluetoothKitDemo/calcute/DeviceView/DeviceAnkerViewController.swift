@@ -16,19 +16,10 @@ enum menuType:String{
 
     case FetchHistory = "Fetch History"
     case changeUnit = "Change unit"
-    case clearDeviceData = "Clear DeviceData"
-    case ScreenLuminance50 = "ScreenLuminance(50)"
-    case ScreenLuminance100 = "ScreenLuminance(100)"
-    case keepAlive = "keep connect alive"
-    case wificonfigstatus = "wifi config"
     case distributionNetwork = "distribution network"
-    case selectUser = "select user"
-    case deleteUser = "delete user"
 
     case openHeartRate = "Open HeartRate"
     case closeHeartRate = "Close HeartRate"
-    case openImpedance = "Open Impedance"
-    case closeImpedance = "Close Impedance"
     case fetchDeviceTime = "Fetch DeviceTime"
     case fetchHeartRate = "Fetch Heart Rate"
     case enterBabyMode = "Enter Baby Mode"
@@ -91,6 +82,55 @@ class DeviceAnkerViewController: BaseViewController {
         
         self.scaleManager.surroundDeviceDelegate = self;
     }
+    
+    func displayScaleModel(_ scaleModel:AKBluetoothScaleBaseModel, isLock:Bool) {
+        
+        let calculateWeightKg = Float(scaleModel.weight)/100
+        
+        var weightStr = calculateWeightKg.toCurrentUserString(accuracyType: Int(2), unitType: Int(scaleModel.unit.rawValue),forWeight: true) + " \(Int(scaleModel.unit.rawValue).getUnitStr())"
+        
+        weightStr = isLock ? "weight lock:" + weightStr : "weight process:" + weightStr
+        
+        if (scaleModel.isHeartRating) {
+            
+            weightStr = weightStr + "\nMeasuring heart rate..."
+        } else if (scaleModel.isFatting) {
+            
+            weightStr = weightStr + "\nMeasuring body fat..."
+        }
+        
+        self.weightLbl.text = weightStr
+        
+        
+        if isLock {
+            
+            self.gotoCalcute(scaleModel:scaleModel)
+            
+        }
+        
+    }
+    
+    func gotoCalcute(scaleModel:AKBluetoothScaleBaseModel) {
+        
+        let alertController = UIAlertController(title: "Go to Calculate Body Data?", message: "", preferredStyle: .alert)
+        
+        let cancelAction = UIAlertAction(title: "cancel", style: .cancel, handler: nil)
+        let okAction = UIAlertAction(title: "ok", style: .default) { (action) in
+            
+            
+            let vc = CalcuteInfoViewController.instantiate()
+            vc.scaleModel = scaleModel
+            vc.deviceModel = self.deviceModel
+            self.navigationController?.pushViewController(vc, animated: true)
+            
+        }
+        
+        alertController.addAction(cancelAction)
+        alertController.addAction(okAction)
+        
+        
+        present(alertController, animated: true, completion: nil)
+    }
 
     deinit {
         self.scaleManager.stopSearch()
@@ -140,7 +180,7 @@ extension DeviceAnkerViewController:UICollectionViewDelegate,UICollectionViewDat
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
-        return CGSizeMake((UIScreen.main.bounds.size.width - 40) / 3, 40)
+        return CGSizeMake((UIScreen.main.bounds.size.width - 40) / 3, 50)
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
@@ -479,14 +519,33 @@ extension DeviceAnkerViewController:UICollectionViewDelegate,UICollectionViewDat
         }
         
         if title == .distributionNetwork{
-            self.addBleCmd(ss: "startWifi")
-            self.XM_Anker?.startWifi(handler: { [weak self] status in
+            
+            self.addBleCmd(ss: "findSurroundWIFI")
+
+            self.XM_Anker?.findSurroundWIFI({ [weak self] (wifiList, status) in
                 guard let `self` = self else {
                     return
                 }
                 
-                self.addStatusCmd(ss: "\(status)")
-            })
+                let vc = WifiConfigViewController.instantiate()
+                vc.wifiList = wifiList
+                
+                vc.configHandle = { (ssid, password, dns) in
+                    print("ssid:\(ssid) password:\(password) dns:\(dns)")
+                }
+                
+                self.navigationController?.pushViewController(vc, animated: true)
+            });
+            
+            
+//            self.addBleCmd(ss: "startWifi")
+//            self.XM_Anker?.startWifi(handler: { [weak self] status in
+//                guard let `self` = self else {
+//                    return
+//                }
+//                
+//                self.addStatusCmd(ss: "\(status)")
+//            })
         }
     }
 }
@@ -501,11 +560,7 @@ extension DeviceAnkerViewController:AKBluetoothUpdateStateDelegate{
         
         self.scaleManager.searchSurroundDevice()
     }
-    
 
-    
-    
-    
 }
 
 extension DeviceAnkerViewController:AKBluetoothSurroundDeviceDelegate{
@@ -598,20 +653,17 @@ extension DeviceAnkerViewController: AKBluetoothServiceDelegate{
 extension DeviceAnkerViewController:AKBluetoothScaleDataDelegate{
     func monitorProcessData(_ model: AKBluetoothScaleBaseModel!, advModel: AKBluetoothAdvDeviceModel!) {
         
-        self.weightLbl.text = String.init(format: "weight process:%0.2f", Float(model.weight) / 100.0)
+        self.displayScaleModel(model, isLock: false)
         self.weightLbl.textColor = UIColor.red
         
         self.scaleCoconutViewController?.XM_AKBluetoothScaleBaseModel = model
         self.scaleCoconutViewController?.complete = false
         
-//        let ret:[String:Any] = ["weight" : model.weight, "impedance": model.impedance, "type" : model.dataType.rawValue, "fat": model.fat, "heartRate": model.heartRate,"isImpedanceTem": model.isImpedanceTem,"impedanceEnCode": model.impedanceEnCode]
-//        print("ret:\(ret)")
-        
     }
     
     func monitorLockData(_ model: AKBluetoothScaleBaseModel!, advModel: AKBluetoothAdvDeviceModel!) {
         
-        self.weightLbl.text = String.init(format: "weight lock:%0.2f", Float(model.weight) / 100.0)
+        self.displayScaleModel(model, isLock: true)
         self.weightLbl.textColor = UIColor.green
         
         self.scaleCoconutViewController?.XM_AKBluetoothScaleBaseModel = model
@@ -619,8 +671,8 @@ extension DeviceAnkerViewController:AKBluetoothScaleDataDelegate{
     }
     
     func monitorBatteryInfoChange(_ model: AKBatteryInfoModel!, advModel: AKBluetoothAdvDeviceModel!) {
-        self.addStatusCmd(ss: "monitorBatteryInfoChange:\(model.power)")
         
+        self.addStatusCmd(ss: "monitorBatteryInfoChange:\(model.power)")
     }
     
 }

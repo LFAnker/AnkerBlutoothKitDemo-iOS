@@ -14,23 +14,14 @@ class CalcuelateResultViewController: UIViewController {
     var selectCalcuteType = calcuteType.calcuteType4AC
     
     var myUserModel : UserModel!
+    var deviceModel:AKBluetoothAdvDeviceModel?
 
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        if let data = UserDefaults.standard.data(forKey: "userInfo"){
-            
-            let decoder = JSONDecoder()
-            if let decodedUser = try? decoder.decode(UserModel.self, from: data){
-                
-                self.myUserModel = decodedUser
-            }
-        }
-        
         self.showReslut()
-        
-        
+
     }
 
     override func viewDidLoad() {
@@ -50,15 +41,19 @@ class CalcuelateResultViewController: UIViewController {
         userModel.gender = PPDeviceGenderType.init(rawValue: UInt(self.myUserModel.sex))!
         userModel.isAthleteMode = self.myUserModel.isAthleteMode == 1 ?true:false
         
+        let mac = self.deviceModel?.deviceMac ?? "c1:c1:c1:c1"
+        let heartRate = self.myUserModel.heartRate
+        let impedance = self.myUserModel.impedance
+        let weight = CGFloat(self.myUserModel.weight)
         
         var fatModel:AKBodyFatModel!
         
         fatModel =  AKBodyFatModel(userModel: userModel,
                                    deviceCalcuteType: PPDeviceCalcuteType.alternateNormal,
-                                   deviceMac: "c1:c1:c1:c1",
-                                   weight: CGFloat(self.myUserModel.weight),
-                                   heartRate: 0,
-                                   andImpedance: self.myUserModel.impedance)
+                                   deviceMac: mac,
+                                   weight: weight,
+                                   heartRate: heartRate,
+                                   andImpedance: impedance)
         
         let arr = [ "PP_ERROR_TYPE_NONE",
                     "PP_ERROR_TYPE_AGE" ,
