@@ -13,25 +13,26 @@ class WifiConfigViewController: UIViewController {
     
     @IBOutlet weak var ssidTF: UITextField!
     @IBOutlet weak var pwdTF: UITextField!
-    @IBOutlet weak var dnsTF: UITextField!
+
+    @IBOutlet weak var domainTF: UITextField!
     @IBOutlet weak var tableView: UITableView!
     
     var wifiList = [AKWifiInfoModel]()
     
-    var configHandle:((_ SSID:String?,_ password:String?, _ DNS:String?)->Void)?
+    var configHandle:((_ SSID:String,_ password:String, _ domain:String)->Void)?
 
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.dnsTF.text = "http://nat.lefuenergy.com:10082"
+        self.domainTF.text = "api.eufylife.com"
     }
 
     
 
     @IBAction func configClick(_ sender: UIButton) {
         
-        self.configHandle?(self.ssidTF.text, self.pwdTF.text, self.dnsTF.text)
+        self.configHandle?(self.ssidTF.text ?? "", self.pwdTF.text ?? "", self.domainTF.text ?? "")
         
         self.navigationController?.popViewController(animated: true)
     }
