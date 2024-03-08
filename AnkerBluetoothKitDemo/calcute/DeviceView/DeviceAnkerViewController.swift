@@ -178,8 +178,9 @@ ReYNnyicsbkqWletNw+vHX/bvZ8=
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        request.setValue(uuid, forHTTPHeaderField: "terminalId")
-
+        request.setValue("5f8f68f8faae9f03fe3fc6c6cf3241657d77387d", forHTTPHeaderField: "uid")
+        request.setValue("vBiOqJYJQyWIww-VIElSOg", forHTTPHeaderField: "token")
+        request.setValue("Health", forHTTPHeaderField: "category")
         
         do {
             
@@ -693,7 +694,7 @@ extension DeviceAnkerViewController:UICollectionViewDelegate,UICollectionViewDat
             return
         }
         
-        let uid = "3bd08f9a7350c51b431daf1ebd3fc180806cf84b"
+        let uid = "5f8f68f8faae9f03fe3fc6c6cf3241657d77387d"
         let domain = self.domainStr
         
         self.addBleCmd(ss: "sendWifiCode")
@@ -816,10 +817,11 @@ extension DeviceAnkerViewController:UICollectionViewDelegate,UICollectionViewDat
         var parameters : [String : String] = [:]
         parameters["client_id"] = "wifi_scale"
         parameters["client_secret"] = "ICXQIBAAKBgQCcoakXBN"
-        parameters["code"] = "wifi_scale"
+        parameters["device_id"] = "eufyt9149cfe801044272"
+        parameters["product_code"] = "eufy T9149"
 
         self.addBleCmd(ss: "Requesting code from the server")
-        self.postRequest(urlStr: "https://api.eufylife.com/v1/user/wifi_scale/bind_code", params: parameters) { [weak self] success, dataDict in
+        self.postRequest(urlStr: "https://appliances-api-qa.eufylife.com/v1/user/wifi_scale/bind_code", params: parameters) { [weak self] success, dataDict in
             
             guard let `self` = self else {
                 return

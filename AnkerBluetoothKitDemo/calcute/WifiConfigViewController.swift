@@ -25,7 +25,7 @@ class WifiConfigViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.domainTF.text = "api.eufylife.com"
+        self.domainTF.text = "appliances-api-qa.eufylife.com"
     }
 
     
