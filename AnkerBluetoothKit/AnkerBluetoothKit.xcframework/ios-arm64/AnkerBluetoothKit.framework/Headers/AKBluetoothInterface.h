@@ -53,10 +53,21 @@
 
 @protocol AKBluetoothScaleDataDelegate <NSObject>
 
-
+// 动态的体重数据
 - (void)monitorProcessData:(AKBluetoothScaleBaseModel *)model advModel:(AKBluetoothAdvDeviceModel*)advModel;
 
+// 稳定的体重数据
 - (void)monitorLockData:(AKBluetoothScaleBaseModel*)model advModel:(AKBluetoothAdvDeviceModel*)advModel;
+
+// 心率测量
+// isComplete: YES 完成 ，  NO 测量中
+- (void)monitorHeartRateData:(AKBluetoothScaleBaseModel*)model advModel:(AKBluetoothAdvDeviceModel*)advModel isComplete:(BOOL)isComplete;
+
+// 抱婴或宠物模式 稳定数据
+- (void)monitorBabyPetLockData:(AKBluetoothScaleBaseModel*)model advModel:(AKBluetoothAdvDeviceModel*)advModel;
+
+// 超重
+- (void)monitorOverWeight:(AKBluetoothScaleBaseModel*)model advModel:(AKBluetoothAdvDeviceModel*)advModel;
 
 @optional
 

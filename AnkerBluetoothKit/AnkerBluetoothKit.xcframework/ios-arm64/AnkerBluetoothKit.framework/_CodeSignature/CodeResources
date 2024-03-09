@@ -30,7 +30,7 @@
 		</data>
 		<key>Headers/AKBluetoothConnectManager.h</key>
 		<data>
-		heN4MYEf3glUOluEFnof4nr1ayI=
+		k/QW0y5ycA6t3LCnzUHR6B7JWu4=
 		</data>
 		<key>Headers/AKBluetoothDeviceSettingModel.h</key>
 		<data>
@@ -38,15 +38,15 @@
 		</data>
 		<key>Headers/AKBluetoothInterface.h</key>
 		<data>
-		ijfzWVLhAtfrC5OJB+arUtfe5oY=
+		89pkhldFtRiTVVSGs95lUnIfsmQ=
 		</data>
 		<key>Headers/AKBluetoothPeripheralAnker.h</key>
 		<data>
-		ZCzqQwjhn1Bik3rQfVSZ3JX8ppw=
+		VUxx2fEv/2rY+nP3mlVTfbjfhOk=
 		</data>
 		<key>Headers/AKBluetoothScaleBaseModel.h</key>
 		<data>
-		vm6Ih0CmOMIR9eI5zK/92tDAYp0=
+		0xOvI4UMdJqp+WvsRCIQCxeZDhM=
 		</data>
 		<key>Headers/AKBodyDetailStandardArray.h</key>
 		<data>
@@ -225,11 +225,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			heN4MYEf3glUOluEFnof4nr1ayI=
+			k/QW0y5ycA6t3LCnzUHR6B7JWu4=
 			</data>
 			<key>hash2</key>
 			<data>
-			Upoc9ActOnIuIHSrDNpwv0e6eSqqX3SlImFt4XyRwXA=
+			wa3DwbP6Sg051QfZ0k2qXGsKozTvNI4wXlsu776FBHY=
 			</data>
 		</dict>
 		<key>Headers/AKBluetoothDeviceSettingModel.h</key>
@@ -247,33 +247,33 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			ijfzWVLhAtfrC5OJB+arUtfe5oY=
+			89pkhldFtRiTVVSGs95lUnIfsmQ=
 			</data>
 			<key>hash2</key>
 			<data>
-			enfhaopThW9DG/mZoHFk0HahRF/2xDEQ3PhQZkFGqMQ=
+			qO7WwDI4OIawj+KtFSjxC1K5/YJxK23SrfbI2stMtOM=
 			</data>
 		</dict>
 		<key>Headers/AKBluetoothPeripheralAnker.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			ZCzqQwjhn1Bik3rQfVSZ3JX8ppw=
+			VUxx2fEv/2rY+nP3mlVTfbjfhOk=
 			</data>
 			<key>hash2</key>
 			<data>
-			lV6LbgI7RBx9yGU1ok9zaTs5167EkdwWnN+Fx5/ZdHw=
+			+H7F2lQCuFWFHZgx+0uCiQZ7Hzn8Kx4sG5y8LxxKo/w=
 			</data>
 		</dict>
 		<key>Headers/AKBluetoothScaleBaseModel.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			vm6Ih0CmOMIR9eI5zK/92tDAYp0=
+			0xOvI4UMdJqp+WvsRCIQCxeZDhM=
 			</data>
 			<key>hash2</key>
 			<data>
-			JpbzXCIGXslv6NGbb5ycPlYXTULWUlipDIxtCkdwbOc=
+			uFTbhr8iYbpRHV/OOgUc28WukfAfcc27w9EqorLk1T4=
 			</data>
 		</dict>
 		<key>Headers/AKBodyDetailStandardArray.h</key>

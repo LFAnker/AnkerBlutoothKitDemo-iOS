@@ -7,9 +7,6 @@
 
 import UIKit
 
-enum calcuteType{
-    case calcuteType4AC
-}
 
 struct UserModel:Codable{
     
@@ -24,9 +21,7 @@ struct UserModel:Codable{
     var isAthleteMode  = 0
     
     enum CodingKeys: String, CodingKey {
-           case sex, impedance, weight, age, height
-
-        case isAthleteMode
+           case sex, impedance, weight, age, height,heartRate,isAthleteMode
        }
     
     
@@ -65,7 +60,7 @@ class CalcuteInfoViewController: UIViewController {
     let jsonData = """
         {
             "sex": 0,
-             "impedance": 14095389,
+             "impedance": 13367551,
              "weight":65,
              "age": 20,
              "height": 160,
@@ -75,7 +70,7 @@ class CalcuteInfoViewController: UIViewController {
     """.data(using: .utf8)!
     
     var myUserModel : UserModel!
-    var selectCalcuteType = calcuteType.calcuteType4AC
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -86,9 +81,12 @@ class CalcuteInfoViewController: UIViewController {
             self.myUserModel = decodedUser
         }
         
-        self.myUserModel.weight = Float(self.scaleModel?.weight ?? 0) / 100.0
-        self.myUserModel.impedance = self.scaleModel?.impedance ?? 0
-        self.myUserModel.heartRate = self.scaleModel?.heartRate ?? 0
+        if let scaleModel = self.scaleModel {
+            
+            self.myUserModel.weight = Float(scaleModel.weight ) / 100.0
+            self.myUserModel.impedance = scaleModel.impedance 
+            self.myUserModel.heartRate = scaleModel.heartRate 
+        }
 
         if self.myUserModel != nil{
             
@@ -138,7 +136,6 @@ class CalcuteInfoViewController: UIViewController {
         
         
         let vc = CalcuelateResultViewController.instantiate()
-        vc.selectCalcuteType = self.selectCalcuteType
         vc.deviceModel = self.deviceModel
         vc.myUserModel  = self.myUserModel
         

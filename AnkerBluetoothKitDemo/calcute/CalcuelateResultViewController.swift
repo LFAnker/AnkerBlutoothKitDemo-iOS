@@ -11,8 +11,6 @@ import AnkerBluetoothKit
 class CalcuelateResultViewController: UIViewController {
     @IBOutlet weak var textView: UITextView!
     
-    var selectCalcuteType = calcuteType.calcuteType4AC
-    
     var myUserModel : UserModel!
     var deviceModel:AKBluetoothAdvDeviceModel?
 
@@ -46,8 +44,11 @@ class CalcuelateResultViewController: UIViewController {
         let impedance = self.myUserModel.impedance
         let weight = CGFloat(self.myUserModel.weight)
         
-        var fatModel:AKBodyFatModel!
         
+        // Calculate body data indicators
+        
+        var fatModel:AKBodyFatModel!
+
         fatModel =  AKBodyFatModel(userModel: userModel,
                                    deviceCalcuteType: PPDeviceCalcuteType.alternateNormal,
                                    deviceMac: mac,

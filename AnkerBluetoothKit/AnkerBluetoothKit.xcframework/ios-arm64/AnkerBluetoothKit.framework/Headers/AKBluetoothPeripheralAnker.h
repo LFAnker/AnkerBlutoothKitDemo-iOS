@@ -26,6 +26,13 @@ typedef NS_ENUM(NSUInteger, AnkerSwitchMode) {
     AnkerSwitchModeCalibration, // 内码
 };
 
+typedef NS_ENUM(NSUInteger, AnkerWifierrorType) {
+    AnkerWifierrorTypeNormal, // 正常
+    AnkerWifierrorTypeTimeout = 1, // 超时
+    AnkerWifierrorTypeWifiError = 2, // 接收到wifi错误码
+    AnkerWifierrorTypeServerError = 13, // 接收到云端返回res_code错误码
+};
+
 @interface AKBluetoothPeripheralAnker : NSObject
 
 @property (nonatomic, weak) id<AKBluetoothServiceDelegate> serviceDelegate;
@@ -165,7 +172,9 @@ typedef NS_ENUM(NSUInteger, AnkerSwitchMode) {
 
 /// 更新WiFi参数(配网)-结束
 /// status 0成功  1失败
-- (void)updateWifiInfoCompleteWithHandler:(void(^)(NSInteger status))handler;
+/// step : 当前步骤：WIFI准备配网 - 0x11；下发device id - 0x12；下发product code - 0x13；配网开始指令 - 0x14；接收域名、uid - 0x15；接收证书 - 0x16；证书接收完成 - 0x17；WIFI list-  0x18；接收SSID - 0x19；接收password - 0x1A；配网完成指令 - 0x1B；删除WIFI参数 - 0x1C；连接路由器-0x25
+/// errorType: 超时 - 0x01；接收到wifi错误码 - 0x02；接收到云端返回res_code错误码 - 0x0d
+- (void)updateWifiInfoCompleteWithHandler:(void(^)(NSInteger status, Byte step, Byte errorType))handler;
 
 @end
 

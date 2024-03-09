@@ -126,9 +126,13 @@ ReYNnyicsbkqWletNw+vHX/bvZ8=
             weightStr = weightStr + "\nMeasuring heart rate..."
         }
         
+        if (scaleModel.heartRateStatus == .complete) {
+            self.gotoCalcute(scaleModel: scaleModel)
+        }
+        
         self.weightLbl.text = weightStr
         
-        
+        print("analysisData--weight:\(scaleModel.weight) dataType:\(scaleModel.dataType.rawValue) isImpedanceTem:\(scaleModel.isImpedanceTem) impedance:\(scaleModel.impedance) impedanceTem:\(scaleModel.impedanceTem) heartRate:\(scaleModel.heartRate) unit:\(scaleModel.unit.rawValue) fat:\(scaleModel.fat) heartRateStatus:\(scaleModel.heartRateStatus.rawValue)")
     }
     
     func gotoCalcute(scaleModel:AKBluetoothScaleBaseModel) {
@@ -374,6 +378,9 @@ extension DeviceAnkerViewController:UICollectionViewDelegate,UICollectionViewDat
                     self.addStatusCmd(ss: "histroty---weight:\(bb.weight)")
                     
                 }
+                
+                self.addStatusCmd(ss: "done---\(error != nil ? error.localizedDescription : "")")
+
             })
         }
         
@@ -536,28 +543,14 @@ extension DeviceAnkerViewController:UICollectionViewDelegate,UICollectionViewDat
             }
         }
         
-        if title == .fetchDeviceTime {
-            self.addBleCmd(ss: "fetchDeviceTime")
-
-            self.XM_Anker?.fetchDeviceTime{ [weak self] deviceTime in
-                guard let `self` = self else {
-                    return
-                }
-                
-                self.addStatusCmd(ss: "\(deviceTime)")
-                
-                self.collectionView.reloadData()
-            }
-        }
-        
         if title == .syncUserInfo {
             self.addBleCmd(ss: "syncUserInfo")
             
             let user = AKUserModel()
-            user.userID = "c7498a2f-11d0-4576-a074-bf13b47c92f0"
+            user.userID = "5f8f68f8faae9f03fe3fc6c6cf3241657d77387d"
             user.age = 20
             user.height = 175
-            user.weight = 60 * 100
+            user.weight = 60 * 100 // 60kg
             user.athleteLevel = .normal
             user.gender = .male
 
@@ -940,6 +933,7 @@ extension DeviceAnkerViewController: AKBluetoothServiceDelegate{
 
 extension DeviceAnkerViewController:AKBluetoothScaleDataDelegate{
     
+    // Unstable weight data
     func monitorProcessData(_ model: AKBluetoothScaleBaseModel!, advModel: AKBluetoothAdvDeviceModel!) {
         
         self.displayScaleModel(model)
@@ -948,6 +942,7 @@ extension DeviceAnkerViewController:AKBluetoothScaleDataDelegate{
         
     }
     
+    // Stable weight data
     func monitorLockData(_ model: AKBluetoothScaleBaseModel!, advModel: AKBluetoothAdvDeviceModel!) {
         
         self.displayScaleModel(model)
@@ -956,6 +951,7 @@ extension DeviceAnkerViewController:AKBluetoothScaleDataDelegate{
 
     }
     
+    // Heart rate measurement
     func monitorHeartRateData(_ model: AKBluetoothScaleBaseModel!, advModel: AKBluetoothAdvDeviceModel!, isComplete: Bool) {
         self.displayScaleModel(model)
         
@@ -963,6 +959,7 @@ extension DeviceAnkerViewController:AKBluetoothScaleDataDelegate{
 
     }
     
+    // Baby or pet mode, stable weight data
     func monitorBabyPetLockData(_ model: AKBluetoothScaleBaseModel!, advModel: AKBluetoothAdvDeviceModel!) {
         self.displayScaleModel(model)
         
@@ -970,6 +967,7 @@ extension DeviceAnkerViewController:AKBluetoothScaleDataDelegate{
 
     }
     
+    // overweight
     func monitorOverWeight(_ model: AKBluetoothScaleBaseModel!, advModel: AKBluetoothAdvDeviceModel!) {
         self.displayScaleModel(model)
         
@@ -977,7 +975,7 @@ extension DeviceAnkerViewController:AKBluetoothScaleDataDelegate{
 
     }
     
-    
+    // Battery Info Change
     func monitorBatteryInfoChange(_ model: AKBatteryInfoModel!, advModel: AKBluetoothAdvDeviceModel!) {
         
         self.addStatusCmd(ss: "monitorBatteryInfoChange:\(model.power)")
