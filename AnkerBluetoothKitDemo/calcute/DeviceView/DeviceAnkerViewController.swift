@@ -113,30 +113,21 @@ ReYNnyicsbkqWletNw+vHX/bvZ8=
         self.scaleManager.surroundDeviceDelegate = self;
     }
     
-    func displayScaleModel(_ scaleModel:AKBluetoothScaleBaseModel, isLock:Bool) {
+    func displayScaleModel(_ scaleModel:AKBluetoothScaleBaseModel) {
         
         let calculateWeightKg = Float(scaleModel.weight)/100
         
         var weightStr = calculateWeightKg.toCurrentUserString(accuracyType: Int(2), unitType: Int(scaleModel.unit.rawValue),forWeight: true) + " \(Int(scaleModel.unit.rawValue).getUnitStr())"
         
-        weightStr = isLock ? "weight lock:" + weightStr : "weight process:" + weightStr
+        weightStr = "weight: " + weightStr
         
         if (scaleModel.isHeartRating) {
             
             weightStr = weightStr + "\nMeasuring heart rate..."
-        } else if (scaleModel.isFatting) {
-            
-            weightStr = weightStr + "\nMeasuring body fat..."
         }
         
         self.weightLbl.text = weightStr
         
-        
-        if isLock {
-            
-            self.gotoCalcute(scaleModel:scaleModel)
-            
-        }
         
     }
     
@@ -797,10 +788,10 @@ extension DeviceAnkerViewController:UICollectionViewDelegate,UICollectionViewDat
         
         self.addBleCmd(ss: "updateWifiInfoComplete")
 
-        self.XM_Anker?.updateWifiInfoComplete(handler: { [weak self] (status, step, errorType, errorCode) in
+        self.XM_Anker?.updateWifiInfoComplete(handler: { [weak self] (status, step, errorType) in
             guard let `self` = self else { return }
             
-            self.addStatusCmd(ss: "\(status) step:\(step) errorType:\(errorType.rawValue) errorCode:\(errorCode)")
+            self.addStatusCmd(ss: "\(status) step:\(step) errorType:\(errorType)")
 
             if status == 0 { // success
                 self.addStatusCmd(ss: "Successful distribution network")
@@ -948,24 +939,44 @@ extension DeviceAnkerViewController: AKBluetoothServiceDelegate{
 }
 
 extension DeviceAnkerViewController:AKBluetoothScaleDataDelegate{
+    
     func monitorProcessData(_ model: AKBluetoothScaleBaseModel!, advModel: AKBluetoothAdvDeviceModel!) {
         
-        self.displayScaleModel(model, isLock: false)
-        self.weightLbl.textColor = UIColor.red
+        self.displayScaleModel(model)
         
         self.scaleCoconutViewController?.XM_AKBluetoothScaleBaseModel = model
-        self.scaleCoconutViewController?.complete = false
         
     }
     
     func monitorLockData(_ model: AKBluetoothScaleBaseModel!, advModel: AKBluetoothAdvDeviceModel!) {
         
-        self.displayScaleModel(model, isLock: true)
-        self.weightLbl.textColor = UIColor.green
+        self.displayScaleModel(model)
         
         self.scaleCoconutViewController?.XM_AKBluetoothScaleBaseModel = model
-        self.scaleCoconutViewController?.complete = true
+
     }
+    
+    func monitorHeartRateData(_ model: AKBluetoothScaleBaseModel!, advModel: AKBluetoothAdvDeviceModel!, isComplete: Bool) {
+        self.displayScaleModel(model)
+        
+        self.scaleCoconutViewController?.XM_AKBluetoothScaleBaseModel = model
+
+    }
+    
+    func monitorBabyPetLockData(_ model: AKBluetoothScaleBaseModel!, advModel: AKBluetoothAdvDeviceModel!) {
+        self.displayScaleModel(model)
+        
+        self.scaleCoconutViewController?.XM_AKBluetoothScaleBaseModel = model
+
+    }
+    
+    func monitorOverWeight(_ model: AKBluetoothScaleBaseModel!, advModel: AKBluetoothAdvDeviceModel!) {
+        self.displayScaleModel(model)
+        
+        self.scaleCoconutViewController?.XM_AKBluetoothScaleBaseModel = model
+
+    }
+    
     
     func monitorBatteryInfoChange(_ model: AKBatteryInfoModel!, advModel: AKBluetoothAdvDeviceModel!) {
         

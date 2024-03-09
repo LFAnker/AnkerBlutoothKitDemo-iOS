@@ -53,14 +53,11 @@ class ScaleCoconutViewController:UIViewController{
         
         var weightStr = calculateWeightKg.toCurrentUserString(accuracyType: Int(2), unitType: Int(scaleModel.unit.rawValue),forWeight: true) + " \(Int(scaleModel.unit.rawValue).getUnitStr())"
         
-        weightStr = (self.complete ?? false) ? "weight lock:" + weightStr : "weight process:" + weightStr
+        weightStr = "weight: " + weightStr
         
         if (scaleModel.isHeartRating) {
             
             weightStr = weightStr + "\nMeasuring heart rate..."
-        } else if (scaleModel.isFatting) {
-            
-            weightStr = weightStr + "\nMeasuring body fat..."
         }
         
         self.weightLabe.text = weightStr
